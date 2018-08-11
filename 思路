@@ -1,0 +1,10 @@
+```
+以后再有false、true判断
+全部换成
+0、1、2
+
+isupdate默认false
+this.etype默认'pv'
+this.etype = isupdate==='1'? 'update':isupdate==='2':'pc':this.etype
+替换
+```

@@ -1,0 +1,4 @@
+```
+找到AddType application/x-gzip .gz .tgz，在
+下面添加一行内容：AddType application/x-httpd-php .php
+```

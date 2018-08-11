@@ -1,0 +1,24 @@
+```
+1、删除ul中最后一个li的border-bottom样式
+CSS：ul#test li:last-child{border-bottom: none;}
+JavaScript：
+window.onload = function(){
+  var li = document.getElementById("test").getElementsByTagName("li");
+  li[li.length-1].style.borderBottom = "none";
+}
+2、CSS小箭头
+ content: "";
+//     position: absolute;
+//     z-index:9999999999;
+//     top: -4px;
+//    left:48%;
+//     border-right: 1px solid #00adae;
+//     border-top: 1px solid #00adae;
+//     height: 6px;
+//     width: 6px;
+//     transform: rotate(deg);
+//     -webkit-transform: rotate(-45deg);
+//     border-left: 1px solid transparent;
+//     border-bottom: 1px solid transparent;
+//     background: #fff 
+```
