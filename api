@@ -1,5 +1,0 @@
-# v-bind:title=""
-# v-if=""
-# v-for="todo in todolist"
-# v-on:click="函数名"
-# v-model=""
