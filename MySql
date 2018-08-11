@@ -1,0 +1,61 @@
+### mysql安装
+```
+yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm && yum  -y install Percona-Server-server-56
+或
+yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+yum list | grep percona
+yum -y install Percona-Server-server-57
+具体过程：https://www.percona.com/doc/percona-server/LATEST/installation/yum_repo.html
+
+二进制安装：
+https://blog.csdn.net/jianiuqi/article/details/53502853
+```
+
+### 服务器
+https://www.itbulu.com/virmach-vps.html
+http://web.jobbole.com/85620/?utm_source=blog.jobbole.com&utm_medium=relatedPosts
+### MySql
+https://blog.csdn.net/aizhiqiang2/article/details/51685308
+https://blog.csdn.net/SuYuMingXiangGuan/article/details/77702695
+
+```
+1、下载mysqltar包到 /usr/local
+
+2、解压并命名mysql
+tar-xvf mysql-5.7.21-linux-glibc2.12-x86_64.tar.gzmvmysql-5.7.21-linux-glibc2.12-x86_64/* /usr/local/mysql/
+3、创建爱你data目录
+mkdir/usr/local/mysql/data
+4、创建mysql用户组及用户
+groupadd mysqluseradd -r -g mysql mysql
+5、复制配置文件到 /etc/my.cnf
+cp-a ./support-files/my-default.cnf /etc/my.cnf
+这个地方最新版本mysql没有默认的配置文件 需要手动创建
+6、创建service ln软连接
+ln-s /usr/local/mysql/  /usr/bin/
+7、mysql服务脚本放到系统服务当中
+cp-a ./support-files/mysql.server /etc/init.d/mysqld
+8、初始化数据
+./bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql/ --datadir=/usr/local/mysql/data/
+./bin/mysqld --user=mysql --basedir=/usr/local/mysql/ --datadir=/usr/local/mysql/data/
+9、启动mysql
+service mysqld start
+10、初始化密码
+mysql5.7会生成一个初始化密码，在root中.mysql_secret文件中。
+[root@localhost ~]#cat/root/.mysql_secret# Password setforuser'root@localhost'at2017-03-1600:52:34ws;fmT7yh0CM
+
+出现的错误：
+重新初始化安装data的时候
+socket=/tmp/mysql.sock    这个目录下的两个相关mysql文件清空
+mysql 错误查询日志
+log-error=/usr/local/mysql/mysqld.log
+使用mysql命令 需要添加环境变量
+在/etc/profile中添加：   export PATH=$PATH:/usr/local/mysql/bin
+系统服务启动：
+/etc/init.d/mysqld start/stop
+
+
+
+select a.title from video as a, mark as b where a.id = b.video_id and b.mark_info=1 and a.item_id=581;
+
+select MAX(video_pv) from feed_all
+```
