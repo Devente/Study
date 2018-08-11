@@ -1,0 +1,120 @@
+# Array:所有的数组方法均来自于Array.prototype，本身就是一个数组
+
+伪数组也可以使用数组api，需要具有length值 .call(obj)或.apply(obj1,obj2)
+1) ES：5
+
+```
+两个元素位置互换：
+arr[i]=[arr[j], arr[j]=arr[i]][0]
+```
+1、转字符串
+```
+String(arr):不改变原数组，可以将null和undefined转换为字符串，但是没法转进制字符串
+arr.toString(arr):不改变原数组，无法转换null和undefined(报错没有这个方法)，括号中的可以写一个数字，代表进制，对应进制字符串
+arr.join(''):不改变原数组
+```
+2、数组拼接：返回新数组
+```
+arr1.concat(arr2):不改变原数组
+Array.prototype.push.apply(arr1,arr2);修改arr1数组，返回length值
+```
+3、截取：返回新数组
+```
+arr.slice(开始,结束):含头不含尾，支持负数,不改变原数组
+```
+4、删除、插入、替换：返回删除的数组
+```
+arr.splice(开始，个数):支持负数，修改原数组   --删除
+arr.splice(第几个开始插入，0，值):值单独传入，修改原数组      --插入
+arr.splice(第几个开始删除，删除几个，在开始位置后插入新元素):修改原数组  --替换
+```
+5、反转数组
+```
+arr.reverse():修改原数组
+```
+6、升序\降序：
+```
+arr.sort(function(a,b){return a-b}):修改原数组
+```
+7、栈操作:修改原数组
+```
+尾入栈：arr.push()  
+尾出栈：arr.pop()  
+头入栈：arr.unshift()
+头出栈：arr.shift()
+```
+8、找索引
+```
+arr.indexOf()
+arr.lastIndexOf()
+```
+/******总结*******/
+```
+直接修改原数组：
+1.arr.splice();
+2.arr.reverse();
+3.arr.sort(); 
+4.arr.push(值);arr.pop();
+5.arr.unshift(值);arr.shift();
+es6新增:copyWithin() 和 fill()
+
+
+不修改原数组：
+1.String(arr);
+2.arr.join("自定义分隔符"); 
+3.arr1.concat(值1,值2,arr2,...);
+4.arr.slice(starti,endi+1); 
+```
+
+/****数组遍历*****/
+```
+array.forEach(
+    fn(value(正在处理的元素),index(正在处理的元素的下标),array(数组本身)){return },this(用来当做fn函数内的this对象，执行环境)
+):数组每一项上执行fn，
+不能在低版本IE（6~8）中使用，兼容写法请参考 Polyfill
+```
+```
+array.every(function(value,indexd,array){return 条件}):检测array每一项，返回true\false，
+不能在低版本IE（6~8）中使用，兼容写法请参考 Polyfill
+```
+```
+array.some(function(value,indexd,array){return 条件}):检测array每一项，只要有一个就返回true，没有返回false
+不能在低版本IE（6~8）中使用，兼容写法请参考 Polyfill
+```
+```
+array.filter(function(value,indexd,array){return 条件})：检测array每一项，返回所有通过元素组成新数组。它就好比一个过滤器，筛掉不符合条件的元素
+不能在低版本IE（6~8）中使用，兼容写法请参考 Polyfill
+```
+```
+array.map(function(value,indexd,array){return 条件})检测array每一项，返回结果生成一个新的数组
+不能在低版本IE（6~8）中使用，兼容写法请参考 Polyfill
+```
+```
+array.reduce(
+    function(previousValue(上一次调用回调返回的值，或者是提供的初始值),value(数组中当前被处理元素的值),index(当前元素在数组中的索引),array){return 条件},initialValue(指定第一次调用fn的第一个参数)
+):接收一个方法作为累加器，数组中的每个值(从左至右) 开始合并，最终为一个值
+
+当 fn 第一次执行时：
+如果initialValue 在调用 reduce() 时被提供，那么第一个 previousValue 将等于 initialValue，此时 item 等于数组中的第一个值；
+如果initialValue 未被提供，那么 previousVaule 等于数组中的第一个值，item 等于数组中的第二个值。此时如果数组为空，那么将抛出 TypeError。
+如果数组仅有一个元素，并且没有提供 initialValue，或提供了 initialValue 但数组为空，那么fn不会被执行，数组的唯一值将被返回。
+其在低版本IE（6~8）的兼容写法请参考 Polyfill
+```
+```
+array.reduceRight(
+    function(previousValue(上一次调用回调返回的值，或者是提供的初始值),value(数组中当前被处理元素的值),index(当前元素在数组中的索引),array){return 条件},initialValue(指定第一次调用fn的第一个参数)
+):方法接收一个方法作为累加器，数组中的每个值（从右至左）开始合并，最终为一个值
+其在低版本IE（6~8）的兼容写法请参考 Polyfill
+```
+```
+find() -- ES6新增
+返回数组中第一个满足条件的元素（如果有的话）， 如果没有，则返回 undefined
+findIndex() -- ES6新增
+返回数组中第一个满足条件的元素的索引（如果有的话）， 如果没有，则返回 -1
+keys() -- ES6新增
+返回一个数组索引的迭代器
+values() -- ES6新增
+返回一个数组迭代器对象，该对象包含数组中每个索引的值
+entries() -- ES6新增
+返回一个数组迭代器对象，该对象包含数组中每个索引的键值对
+```
