@@ -1,5 +1,108 @@
+属性写在data
+方法卸载methods
 # v-bind:title=""
 # v-if=""
-# v-for="todo in todolist"
 # v-on:click="函数名"
 # v-model=""
+
+#循环数组
+```
+v-for="(todo,index) in todolist"
+```
+#循环对象
+```
+v-for="(value,key) in objList"
+```
+#更改属性
+```
+Vue.set(数组，下标，{xx:xx})
+```
+#绑定标签属性
+```
+<a :href="xx" :title="xx"></a>
+:class="odd"
+:style="oddCss"
+```
+#条件是否显示
+```
+v-if
+v-else
+v-show
+```
+#自定义事件
+```
+子组件：
+@click='myeitm'
+methods:{
+  myeitm (){
+    this.$emit('自定义事件名称')
+  }
+}
+父组件
+
+```
+
+#表单提交
+```
+v-mode
+
+1、v-mode.lazy延迟更新
+2、v-mode.number输入的是数字
+3、v-mode.trim排除空格
+```
+#计算属性
+```
+computed:{
+  oddnum(){
+    return xxx(data里的数据)
+  }
+}
+与
+methods：{
+  oddnum(){
+    return xxx(data里的数据)
+  }
+
+}
+```
+#监控值
+```
+wathch:{
+xx(val,oldVal){
+
+}
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
