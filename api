@@ -32,6 +32,9 @@ v-show
 #自定义事件
 ```
 子组件：
+@click.stop=   阻止冒泡
+@keydown.13=   键盘13时触发
+
 @click='myeitm'
 methods:{
   myeitm (){
@@ -45,11 +48,15 @@ methods:{
 #表单提交
 ```
 v-mode
-
+v-model = "绑定变量"
 1、v-mode.lazy延迟更新
 2、v-mode.number输入的是数字
 3、v-mode.trim排除空格
+
+：(v-bind)属性的绑定
+<option :value='item.value'>
 ```
+
 #计算属性
 ```
 computed:{
@@ -73,7 +80,6 @@ xx(val,oldVal){
 }
 }
 ```
-
 
 
 
