@@ -1,0 +1,15 @@
+```
+<meta http-equiv="content-type | default-style | refresh"
+
+                  content="text/html;chatset=UTF-8                |
+                  
+                  content="the document's preferred stylesheet"   |
+                  //上面 content 属性的值必须匹配同一文档中的一个 link 元素上的 title 属性的值，
+                  或者必须匹配同一文档中的一个 style 元素上的 title 属性的值
+                  
+                  content="时间s;url=https://www.baidu.com"
+                  刷新
+                  " />
+
+
+```
