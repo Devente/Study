@@ -1,0 +1,29 @@
+```
+css的盒模型由content(内容)、padding(内边距)、border(边框)、margin(外边距)组成
+因为若不声明DOCTYPE类型，IE浏览器会将盒子模型解释为IE盒子模型，FireFox等会将其解释为W3C盒子模型；
+若在页面中声明了DOCTYPE类型，所有的浏览器都会把盒模型解释为W3C盒模型
+
+1. W3C 标准盒模型:box-sizing:content-box        保证了内容不变 ，撑开容器
+    盒子的大小为content+padding+border
+
+    margin算进去的那是盒子占据的位置，而不是盒子的大小！
+Width  = width + padding-left + padding-right + border-left + border-right
+Height = height + padding-top + padding-bottom + border-top + border-bottom
+
+2. IE 盒模型:box-sizing:border-box              保证了容器不变 ，压缩内容
+如果在ie6,7,8中DOCTYPE缺失会触发IE模式
+Width  = width(包含padding-left + padding-right + border-left + border-right)
+Height = height(包含padding-top + padding-bottom + border-top + border-bottom)
+    
+ box-sizing:padding-box
+ Width  = width(包含padding-left + padding-right) + border-top + border-bottom
+ Height = height(包含padding-top + padding-bottom) + border-top + border-bottom
+
+
+
+
+
+
+
+
+```
