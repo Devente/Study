@@ -1,0 +1,127 @@
+```
+复杂选择器
+1、兄弟选择器（向下找一个p）
+    div+p{}
+2、通用选择器（向下找所有p）
+    div p{}
+---------------------------------
+属性选择器
+1、[attr] ：[id]、[type=]
+2、div[attr]
+3、div[id][class]...
+4、div[id='']
+5、div[class~=value] : <div class="lf lf_btn border"></div>   div[class~=btn]
+class属性列表找btn
+6、div[class^=value]
+class以value开头
+7、div[class$=value]
+class以value结尾
+8、div[class*=value]
+包含 value 字符的div元素
+--------------------------------
+伪类选择器
+  链接伪类
+  :link
+  :visited
+  动态伪类
+  :hover
+  :active
+  :focus
+  目标伪类
+  元素状态伪类
+    :enabled
+    :disabled
+    :checked 
+  结构伪类
+    :first-child     属于其父元素中的首个子元素
+                    table tbody tr td:first-child
+		                tbody 中的 每行里的 第一列
+    :last-child
+    :empty          没有子元素的每个元素
+                    <div></div>
+		                 没有子元素
+    :only-child     其父元素中的唯一子元素
+                    
+    :nth-child(n)   其父元素中的第 n 个子元素
+    
+  否定伪类
+  table td:not(:first-child) : 匹配 除每行第一列以外的所有列 
+  
+  高级伪类
+    突出显示 活动的 html 锚点元素
+    div:target / target
+    
+伪元素选择器 
+::
+ : 与 ::的区别
+      : 一般只用于伪类选择器
+      :: 一般只用于 伪元素选择器
+      
+  :before / ::before
+  作用：用于匹配元素的内容区域的前端
+  :after / ::after
+  作用：用于匹配元素的内容区域的后端
+-----------------------------
+:after {//作用于浮动元素的父亲
+  clear:both;//清除所有浮动
+  content:' ';//可以取值也可以为空
+  display:block;//对于FF/chrome/opera/IE8不能缺少
+  width: 0;
+  height: 0;
+  visibility:hidden;//允许浏览器渲染它，但是不显示出来
+ }/*==for FF/chrome/opera/IE8==*/
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
