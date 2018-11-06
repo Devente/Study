@@ -1,0 +1,77 @@
+```
+transform:转换、变形
+
+父容器{
+  perspective:视点距离;
+}
+
+选择器 {
+  transform: none/变形函数
+  transform-origin: 50% 50%;
+}
+
+2D转换函数
+(1)位移：translate(x)、translate(x, y)，无需指定轴点
+(2)旋转：rotate(deg)，可以指定轴点
+(3)缩放：scale(x)、scale(x,y)  1代表100%，可以指定缩放的原点
+(4)倾斜：skew(xdeg)、skew(xdeg, ydeg)，可以指定倾斜的原点
+3D转换函数
+注意：所有的3D转换函数都必须要配合“视点”的使用。Perspective属性必须放在执行3D转换的元素的父元素身上；
+单位是px——指人的眼睛距屏幕的距离。同一个3D转换，若视点越近，转换效果越夸张。
+(1)3D旋转函数——重点：
+      rotateX(deg)单杠  rotateY(deg)钢管舞  rotateZ(deg) 
+(2)3D位移函数——了解
+      translateZ(z)	Z轴位移效果与缩放类似
+(3)3D缩放——了解
+      scaleZ(z)  在Z轴上进行拉伸或压缩——必须配合在X轴或Y轴旋转才能出现Z轴上的缩放效果，注意书写顺序：
+      transform: scaleZ(1.5) rotateX(45deg);
+      
+----------------------------------------------------------------------
+
+transition：渐变动画
+  ·颜色属性，如background-color、color
+  ·取值为数值的属性，如width、opacity、font-size...
+  ·转换属性，如transform:各种转换函数
+  ·visibility 属性
+  ·阴影属性，box-shadow
+
+选择器 {
+  CSS属性: 值1;
+  transition:  属性  持续时间;
+}
+选择器 {
+  CSS属性: 值2;
+}
+transition属性完整形式：transition: property duration timing-function delay;
+
+----------------------------------------------------------------------
+
+关键帧(keyframe)动画
+步骤一：使用 @keyframes 声明动画的关键帧
+
+@keyframes 动画名称 {
+  0% {  }
+  xx% {  }
+  100% {  }
+}
+
+步骤二：在某个选择器中使用指定的关键帧动画
+
+选择器 {
+  animation:  动画名称 持续时间;
+}
+
+动画属性：  
+  animation:  name  duration  timing-function  delay;
+动画子属性：
+animation-name
+animation-duration
+animation-timing-function
+animation-delay
+
+
+
+
+
+
+```
