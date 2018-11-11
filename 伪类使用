@@ -15,8 +15,13 @@ a:active { color: lime }      /* 激活链接 */
 a:after{
   content:''/* 空|内容  行内元素 */
 }
+
+input:in-range + label::after {
+  content: 'okay.';
+}
 ----------------------------------------------
 :checked 
+```
 radio(<input type="radio">)
 checkbox (<input type="checkbox">)
 ("select") 元素中的option HTML元素("option")
@@ -24,16 +29,54 @@ checkbox (<input type="checkbox">)
 input:checked + label{}
 input[type="radio | checkbox "]:checked{}
 option:checked{}
+```
+
 --------------------------------------------
-:disabled  /* 被禁用的元素 */
+:disabled  /* 被禁用的元素 */    :enabled  /* 启用的元素 */
 input[type="text"]:disabled
---------------------------------------------
 
 :empty  
 没有子元素的元素。子元素只可以是元素节点或文本（包括空格）
 
+/*
+:first     /* 打印第一页 */
+:left      /* 和@规则  @page 配套使用, 对打印文档的左侧页设置CSS样式 */
 
 
+*/
+:first-child | :last-child    /* 一组兄弟元素中的第一个元素 | 最后一个 */  
+:first-of-type | :last-of-type  /* 一组兄弟元素中其类型的第一个元素 | 最后一个 */
+:in-range | :out-of-range   /* <input>元素，其当前值处于属性min 和max 限定的范围之内 | 外 */
+<input type='number' mix='1' max='3'/>
+:optional  /* 任意没有required属性的 <input> | <select> |  <textarea> 元素使用它 */
+:read-only /* 元素不可被用户编辑的状态（如锁定的文本输入框） */
+:read-write /* 元素（例如可输入文本的 input元素）可以被用户编辑 */
+:require    /* 任意拥有required属性的 <input> | <textarea> 元素使用它. 它允许表单在提交之前容易的展示必填字段并且渲染其外观. */
+:root   /* 表示 <html> 元素,在声明全局 CSS 变量时 :root 会很有用 */
+
+--------------------------------------------
+:focus          /* 当用户点击或触摸元素或通过键盘的 “tab” 键选择它时会被触发 */  
+:focus-within   /* 一个元素获得焦点 | 该元素的后代元素获得焦点 */
+当用户在表单中某个<input> 域上获得焦点，会高亮整个表单
+-------------------------------------------
+
+:invalid | valid   /* 任意内容未通过验证的 <input> 或其他 <form> 元素 | 有值或验证通过 */
+用于突出显示用户的字段错误非常有用
+required
+<input type="email" id="email_input" required/>
+
+:not() /* 不符合参数选择器X描述的元素 */
+
+:nth-child(odd | even)  /* 奇数 | 偶数行 */
+tr:nth-last-child(-n+4)
+匹配HTML表格中的最后四行
+
+:target     /* 唯一的页面元素(目标元素 #)，其ID与当前URL片段匹配 */
+::first-line 在某块级元素的第一行应用样式。第一行的长度取决于很多因素，包括元素宽度，文档宽度和文本的文字大小。
+和其他所有的 伪元素一样，::first-line 不能匹配任何真实存在的html元素。
+只能在块容器中,所以,只能在一个display:block | inline-block | table-cell | table-caption中有用
+
+::selection 应用于文档中被用户高亮的部分（比如使用鼠标或其他选择设备选中的部分）
 
 
 
