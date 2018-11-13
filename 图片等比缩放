@@ -1,0 +1,21 @@
+function scalImage(imgWidth,imgHeight,containerWidth,containerHeight){
+      imgWidth = parseInt(imgWidth,10);
+      imgHeight = parseInt(imgHeight,10);
+      containerWidth = parseInt(containerWidth,10);
+      containerHeight = parseInt(containerHeight,10);
+    //计算比例
+    if(imgWidth > containerWidth){
+      widthRatio = containerWidth / imgWidth;
+      imgWidth = containerWidth;
+      //设定等比例缩放后的高
+      imgHeight = imgHeight * widthRatio;
+    }
+  if(imgHeight > containerHeight){
+    //计算比例
+    heightRatio = containerHeight / imgHeight;
+    imgHeight = containerHeight;
+    imgWidth = imgWidth * heightRatio;
+  }
+    imgWidth = parseInt(imgWidth,10);
+    imgHeight = parseInt(imgHeight,10);
+  return {width:imgWidth,height:imgHeight};
