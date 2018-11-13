@@ -1,3 +1,4 @@
+```
 function scalImage(imgWidth,imgHeight,containerWidth,containerHeight){
       imgWidth = parseInt(imgWidth,10);
       imgHeight = parseInt(imgHeight,10);
@@ -19,3 +20,11 @@ function scalImage(imgWidth,imgHeight,containerWidth,containerHeight){
     imgWidth = parseInt(imgWidth,10);
     imgHeight = parseInt(imgHeight,10);
   return {width:imgWidth,height:imgHeight};
+
+```
+
+```
+图片居中
+$(this).css("margin-left",(maxWidth - width) / 2 + 'px');
+$(this).css("margin-top",(maxHeight - height) / 2 + 'px');
+```
