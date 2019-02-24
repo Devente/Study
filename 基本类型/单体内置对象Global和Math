@@ -1,0 +1,56 @@
+## Global
+```
+Global方法：
+isNaN()
+isFinite()
+parseInt()
+parseFloat()
+eval()
+编码：
+encodeURI()
+不会对本身属于URI的特殊字符进行编码(':'、'/'、'?'、'#')
+encodeURIComponent()
+对URI的非标准字符全部编码
+解码：
+decodeURI()
+decodeURIComponent()
+
+Global属性：
+---------------------------------------
+属性           说明
+undefined      特殊值undefined
+NaN            特殊值NaN
+Infinity       特殊值Infinity 无穷
+Object         构造函数Object
+Array          构造函数Array
+Function       构造函数Function
+Boolean        构造函数Boolean
+String         构造函数String
+Number         构造函数Number
+Date           构造函数Date
+RegExp         构造函数RegExp
+Error          构造函数Error
+EvalError      构造函数EvalError
+RangeError     构造函数RangeError
+ReferenceError 构造函数ReferenceError 引用错误
+syntaxError    构造函数syntaxError    语法错误
+TypeError      构造函数TypeError      类型错误
+URIError       构造函数URIError
+---------------------------------------
+
+Math方法：
+
+Math.max()最大值
+Math.min()最小值
+技巧：
+var arr = [1,2,3,4,5];
+var max = Math.max.apply(Math,arr);
+
+Math.ceil()   上取整
+Math.floor()  下取整
+Math.round()  四舍五入
+Math.random() 0~1之间是随机数
+值 = Math.floor(Math.random() * 最大数 + 最小数)
+
+
+```

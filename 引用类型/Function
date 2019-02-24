@@ -1,0 +1,34 @@
+Function:函数其实是Function类型的实例
+## 函数具有属性和方法
+```
+属性：length 和 prototype
+length : 函数接收到命名参数的个数
+prototype : 保存所有实例方法{toString(),valueOf()...}
+
+方法：call(),apply()
+作用：特定的作用域中调用函数，改变this的指向
+call()
+第一个参数：运行函数的作用域( this )
+第二个参数：数组( 可以是数组实例 | arguments对象 )
+apply()
+第一个参数：运行函数的作用域( this )
+其余是列举参数
+bind()
+创建一个函数实例，其this值会绑定到传给bind()函数的值
+
+function sum (num1,num2){
+	return num1 + num2;
+}
+function callSum1 (num1,num2){
+	return sum.apply(this,arguments); //传入arguments对象
+}
+function callSum2 (num1,num2){
+	return sum.apply(this,[num1,num2]); //传入数组
+	/*
+	* return sum.call(this,num1,num2);
+	*
+	*/
+}
+//alert(callSum1(10,10));
+//alert(callSum2(10,10));
+```

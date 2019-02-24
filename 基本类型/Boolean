@@ -1,0 +1,19 @@
+```
+无效：
+布尔表达式中所有对象都会转化为true
+new Boolean (true | false)  //true
+
+typeof {
+	基本类型：返回 "true | false"
+	引用类型：返回 "object"
+}
+
+有效：
+instanceof 
+Obj instanceof 类型   // true | false
+
+
+基本类型使用 typeof 检测
+引用类型使用 instanceof 检测
+
+```

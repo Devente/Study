@@ -1,0 +1,20 @@
+```
+实例：new Number()；
+valueOf():返回基本类型的数值
+toLocaleString()/toString():返回字符串形式的数值
+
+toString():可以传入数字，返回几进制字符串形式的数值
+var num = 10;
+num.toString() // '10'
+num.toString(2) // '1010'
+num.toString(8) // '12'
+num.toString(10) // '10'
+num.toString(16) // 'a'
+
+toFixed():可以传入数字，返回保留几位小数字符串形式的数值。(自动四舍五入)
+
+
+基本类型使用 typeof 检测
+引用类型使用 instanceof 检测
+
+```
