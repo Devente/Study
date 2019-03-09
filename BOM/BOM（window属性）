@@ -1,0 +1,86 @@
+## BOM：浏览器属性(window)
+/**
+ * Netscape  正常浏览器  
+ * ie        new ActiveXObject()
+ */
+- 窗口大小
+chrome && FF
+window.outerWidth | outerHeight  // 浏览器本身的宽高
+window.innerWidth | innerHeight  // 浏览器视口(看到的)的宽高
+或js实现
+if(document.compatMode == 'CSS1Compat'){//标准模式
+	document.documentElement.clientWidth(clientHeight、clientLeft、clientTop)  // 浏览器视口宽高
+}else{
+	document.body.clientWidth(clientHeight、clientLeft、clientTop)             //body的宽高
+}
+
+- 设置窗口大小
+window.resizeTo(width,height);
+
+- 打开新窗口
+window.open(url,target,窗口的属性,true|false历史记录)
+新创建的窗口有opener属性，与原窗口可以通信
+
+- 定时器
+setTimeout(function(){},毫秒)
+经过该时间后，指定的代码不一定会执行
+原因：
+JS是单线程解释器，一定时间内只能解析一段代码，为了控制要执行的代码，就有一个JS **任务队列 **
+第二个参数告诉JS再过多长时间吧当前任务添加到队列里。如果队列是空的，代码立即执行，如果不是空的，需要等前面代码执行完。
+
+- 系统弹出框
+confirm('are you sure')   // true | false
+prompt(提示语,输入框的默认值)  // 文本值 | null
+
+window.print() // 打印
+window.find()  //查找
+
+**
+- location：即是window的属性也是document的属性
+window.location == document.location
+window.assgin(地址)   // 当前打开地址 ，并在历史记录增加一条
+window.location.reload(true)  //强制浏览器从服务器重新加载
+location:可以设置也可以获取  ( = 设置 | 获取 )
+每次设置属性都会触发浏览器重新加载( hash除外 )
+每次设置属性都会生成一条历史记录
+解决：
+window.location.replace(地址)
+
+--------------------------------------------
+hash         URL中'#content'       没有返回""
+host         URL中域名和端口号      没有返回""
+hostname     URL中域名             没有返回""
+port         URL中端口号           没有返回""
+protocol     URL中协议(http|https) 
+pathname     URL中的目录(/xx/xx)   
+href         URL的整体路径         
+search       查找URL中的关键字(?后面的东西) ?xxxx      
+--------------------------------------------
+**
+**
+- navigator：检测浏览器的类型
+--------------------------------------------------------
+userAgent               浏览器用户代理字符串
+appName                 完整浏览器名称：通常都是Netscape
+appCodeName             浏览器名称：通常都是Mozilla
+appVersion              浏览器版本
+cookieEnabled           是否启用cookie
+language                语言
+platform                浏览器所在的系统平台
+onLine                  是否联网
+-------------------------------------------------------
+**
+- screen
+screen.width | height            // 屏幕的宽高(包括工具栏)
+screen.availWidth | availHeight  // 可用屏幕的宽高(纯屏幕，不包括包括工具栏)   只读
+
+- history
+应用：自定义"后退"和"前进"的按钮，及，检测当前页面是不是用户历史记录中的第一个页面
+history.length
+history.length = 0 // 用户一开始就打开你的页面
+
+
+history.go()
+参数：正、负值 | 字符串(浏览器跳到历史记录中包含这个字符串的位置，可能进，可能退。看最近的为位置)
+history.back()      // 后退
+history.forward()   // 前进
