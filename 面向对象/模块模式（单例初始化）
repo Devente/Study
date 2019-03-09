@@ -1,0 +1,21 @@
+## 模块模式：自定义创建私有变量及方法
+用于：初始化一个单例，获取信息 | 写接口的时候用到(暴露公共api)
+单例：只有一个实例的对象
+JS是以对象字面量的方式来创建单例对象的
+```
+var application = function(){
+	//私有变量 he 函数
+	var components = new Array();
+	var BaseComponent = function(){};
+	//初始化
+	components.push(new BaseComponent());
+	//创建application的局部副本
+	var app = new BaseComponent();
+	//公共接口
+	app.getComponent = function(){return 1};
+	app.registor = function(){return 2};
+	return app;
+}
+application()
+```
+
