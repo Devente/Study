@@ -1,5 +1,12 @@
 # Array:所有的数组方法均来自于Array.prototype，本身就是一个数组
 
+includes : 数组中是否包含此元素
+[].includes(‘要查找的元素’，index)
+index{
+ - index必须 < array.length
+ - index为负值，array.length + index ：计算出的索引值开始查找该元素
+}
+
 伪数组也可以使用数组api，需要具有length值 .call(obj)或.apply(obj1,obj2)
 1) ES：5
 
