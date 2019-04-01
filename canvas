@@ -1,0 +1,38 @@
+/*
+* fillRect   绘制矩形
+* strokeRect 矩形边框
+* clearRect  清除矩形
+*************
+* beginPath  创建
+* moveTo     x,y 起点
+* lineTo     x,y 指定坐标
+* closePath  闭合
+* stroke     绘制
+* fill       填充闭合(closePath没有闭合)
+************
+* arc(x,y,r,start弧度,end弧度,顺|逆)
+* 三点控制:起始点,x1,y1,x2,y2
+* arcTo(x1,y1,x2,y2,弧度)
+************
+* 虚线：setLineDash([]) lineDashOffset
+************
+* fillText()
+* strokeText()
+* **********
+* drawImage(img,0,0);引入
+* drawImage(image,x,y,width,height);缩放
+*
+* save() 和 restore() 保存和恢复
+* translate(x,y)translate 移动的是 canvas 的坐标原点(坐标变换)。
+* rotate(angle) 顺时针
+* scale(x, y)
+* transform(a, b, c, d, e, f)
+* {控制动画
+*   setInterval()
+*   setTimeout()
+*   requestAnimationFrame()
+* }
+*
+* navigator.geolocation.getCurrentPosition(函数)
+* 函数(position)
+*/
